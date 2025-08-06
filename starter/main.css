@@ -4,10 +4,21 @@
     margin: 0;
     box-sizing: border-box;
 }
+@font-face {
+    font-family: "laho-lato";
+    src: url("./font/Lato-Bold.ttf")format("truetype"),url("./font/lato-regular-webfont.woff")format("woff")url(./font/lato-regular-webfont.woff2)format("woff2");
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');  */
+
+body{
+     /* font-family: "Lato", sans-serif; */
+     font-family: "custom-lato",sans-serif;
+}
 /* Page resets ends here */
 /* Reusable */
 .btn{
-        padding: 15px 20px;
+    padding: 15px 20px;
 }
 .btn-red{
     background: var(--main-color);
@@ -18,29 +29,144 @@
     color: var(--main-color);
     background: transparent;
 }
- .btn-white{
+.btn-white{
     background: transparent;  
     border: 2px solid var(--main-color);
 }
 .btn-white:hover{
     color: var(--main-color);
-
 }
 /* Reusable */
 /* Header section starts here  */
-header{
-    border: 3px solid red;
+.backdrop{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: var(--light-text-color);
+    display: none;
 }
-.nav-desktop{
-    border: 3px solid blue;
+.show-backdrop{
+    display: block;
+}
+header{
+    /* border: 3px solid tomato; */
+}
+
+.nav-mobile{
+    background: var(--main-color);
+    display: none;
+    justify-content: space-between;
+    padding: 10px 30px;
+    align-items: center;
+}
+.mobile-logo{
+    /* border: 3px solid tomato; */
     display: flex;
     align-items: center;
+    color: var(--white-color);
+}
+.mobile-logo-container{
+    border: 3px solid var(--white-color);
+    font-size: 25px;
+    padding: 5px;
+}
+.mobile-logo span{
+    font-size: 25px;
+    margin-left: 10px;
+    font-weight: bolder;
+    color: var(--white-color);
+}
+.hamburger{
+    /* border: 
+    3px solid tomato; */
+    width: 25px;
+    height: 25px;
+    display: flex;
+     align-items: center;
+     justify-content: center;
+     z-index: 6;
+}
+.menu{
+    height: 3px;
+    background: var(--white-color);
+    width: 100%;
+    position: relative;
+}
+.menu::before{
+    content: "";
+    height: 3px;
+    background: var(--white-color);
+    width: 100%;
+    position: absolute;
+    transform: translateY(-10px);
+}
+.menu::after{
+    content: "";
+    height: 3px;
+    background: var(--white-color);
+    width: 100%;
+    position: absolute;
+    transform: translateY(10px);
+}
+.showburger .menu{
+    background: transparent;
+}
+.showburger .menu::before{
+    transform: rotate(45deg);
+    background: var(--main-color);
+}
+.showburger .menu::after{
+    transform: rotate(-45deg);
+    background: var(--main-color);
+}
+.mobile-links-holder{
+    transition: all 0.5s ease;
+    transform: translateX(200%);
+    /* border: 3px solid blue; */
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 50%;
+    background: var(--main-color);
+}
+.show-mobile-links-holder{
+    transform: translateX(0);
+}
+.mobile-links-holder ul{
+    list-style: none;
+}
+.mobile-active-link{
+    background: var(--white-color);
+    color: var(--main-color)!important;
+}
+.mobile-links-holder button{
+    border: 2px solid var(--white-color);
+    color: var(--white-color);
+    background: var(--main-color);
+    margin-left: 20px;
+}
+.mobile-links-holder a{
+    text-decoration: none;
+    color: var(--white-color);
+    padding: 25px 0 25px 20px;
+    display: block;
+}
+.mobile-links-holder a:hover{ 
+    background: var(--white-color);
+    color: var(--main-color);
+}
+.nav-desktop{
+    display: flex;
+    align-items: center;
+    background: var(--white-color);
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     justify-content: flex-end;
-   
 }
 .desktop-logo{
     position: absolute;
@@ -56,12 +182,12 @@ header{
     font-size: 50px;
 }
 .desktop-link-holder{
-    border: 3px solid green;
     display: flex;
-    align-items: center;
+    /* border: 3px solid green; */
+    align-items: stretch;
 }
 .desktop-link-holder ul{
-    border: 3px solid purple;
+    /* border: 3px solid purple; */
     list-style: none;
     display: flex;
 }
@@ -76,23 +202,58 @@ header{
     border: 2px solid var(--main-color);
 }
 .header-banner-section{
+    /* border: 3px solid black; */
     padding-top: 130px;
-    min-height: 450px;
-    border: 3px solid black;
+    padding-bottom: 30px;
+    min-height: 470px;
     background: url("./img/banner.jpg");
     background-size: cover;
+    /* background-position: center; */
 }
 .banner-content{
-    border: 3px solid yellow;
+    /* border: 3px solid red;  */
     width: 90%;
-    height: 100px;
+    height: 100%;
     margin: 0 auto;
 }
 .header-text-container{
-    border: 3px solid purple;
+    /* border: 3px solid purple; */
     width: 50%;
 }
 .header-icons{
     margin-left: 10px;
 }
+.header-text-container h1{
+    color: var(--main-color-dark);
+    font-size: 45px;
+    line-height: 1.2;
+}
+.header-text-container p{
+    color: var(--text-color);
+    margin: 20px 0;
+    line-height: 1.5;
+}
+.header-text-container button{
+    margin-right: 10px;
+}
+.header-counter-section{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px 0;
+    background: var(--main-color);
+    color: var(--white-color);
+
+}
+.counter{
+    text-align: center;
+    width: 180px;  
+}
+.counter h2{
+    font-size: 30px;
+}
+.counter p{
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
 /* Header  section ends here */

@@ -7,10 +7,37 @@
     <link rel="stylesheet" href="./fontawesome/css/all.css">
     <link rel="stylesheet" href="defaults.css">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./mobile.css">
 </head>
 <body>
 <!--Header section starts here  -->
+<div class="backdrop" onclick="dosomething()"></div>
   <header>
+
+    <nav class="nav-mobile">
+
+      <div class="mobile-logo">
+        <div class="mobile-logo-container">
+          <i class="fa-regular fa-hand-lizard"></i>
+        </div>
+        <span>Foodplug</span>
+      </div>
+      <div class="hamburger" onclick="dosomething()">
+        <div class="menu"></div>
+      </div>
+      <div class="mobile-links-holder">
+         <ul>
+          <li><a href="" class="mobile-active-link">Home</a></li>
+          <li><a href="">About Us</a></li>
+          <li><a href="">Explore Foods</a></li>
+          <li><a href="">FAQ</a></li>
+        </ul>
+        <button class="btn">+1(000) XXX-XXXX</button>
+      </div>
+
+    </nav>
+
+
     <nav class="nav-desktop">
       <div class="desktop-logo">
         <i class="fa-regular fa-hand-lizard"></i>
@@ -37,9 +64,33 @@
         </div>
 
       </div>
+    </div>
+    <div class="header-counter-section">
+      <div class="counter">
+        <h2>1287+</h2>
+        <p>savings</p>
+      </div>
+
+      <div class="counter">
+        <h2>1287+</h2>
+        <p>savings</p>
+      </div>
+
+      <div class="counter">
+        <h2>1287+</h2>
+        <p>savings</p>
+      </div>
+
+      <div class="counter">
+        <h2>1287+</h2>
+        <p>savings</p>
+      </div>
 
     </div>
   </header>
     <!-- Header section ends here -->
+
+    <script src="./main.js"></script>
 </body>
+
 </html>
