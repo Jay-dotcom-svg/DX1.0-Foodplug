@@ -50,10 +50,6 @@ body{
 .show-backdrop{
     display: block;
 }
-header{
-    /* border: 3px solid tomato; */
-}
-
 .nav-mobile{
     background: var(--main-color);
     display: none;
