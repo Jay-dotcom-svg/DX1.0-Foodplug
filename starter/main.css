@@ -50,12 +50,17 @@ body{
 .show-backdrop{
     display: block;
 }
+
 .nav-mobile{
     background: var(--main-color);
     display: none;
     justify-content: space-between;
     padding: 10px 30px;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 .mobile-logo{
     /* border: 3px solid tomato; */
@@ -160,9 +165,13 @@ body{
     background: var(--white-color);
     position: fixed;
     left: 0;
+    right: 0;
     top: 0;
     width: 100%;
     justify-content: flex-end;
+    max-width: 1500px;
+    margin: 0 auto;
+    /* border: 1px solid black; */
 }
 .desktop-logo{
     position: absolute;
@@ -253,3 +262,104 @@ body{
 }
 
 /* Header  section ends here */
+
+/* AboutUs Section starts here */
+.aboutus-section{
+    /* border: 3px solid blue; */
+    width: 90%;
+    margin: 0 auto;
+}
+.aboutus-container{
+    /* border: 3px solid red; */
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    flex-wrap: wrap;
+}
+.about-image-holder{
+    /* border: 3px solid green; */
+    width: 48%;
+    height: 350px;
+    border-radius: 25px;
+    overflow: hidden;
+    min-width: 350px;
+}
+.about-image-holder img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.about-text-holder{
+    /* border: 3px solid purple; */
+    width: 48%;
+    min-height: 350px;
+    min-width: 350px;
+}
+.about-text-holder h2{
+    background: var(--light-text-color);
+    border-left: 5px solid var(--main-color);
+    border-right: 5px solid var(--main-color);
+    padding: 20px;
+    color: var(--main-color);
+    font-size: 27px;
+}
+.about-text-holder p{
+    margin: 20px 0;
+}
+.about-text-holder ul{
+    list-style: none;
+    margin-bottom: 20px;
+}
+.about-us-icons{
+    color: var(--main-color);
+    margin: 0 10px 0 0;
+}
+.aboutus-banner-section{
+    /* border: 3px solid #ffd700; */
+    /* height: 250px; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background: var(--gray-gradient), url("./img/about3.jpg");
+    background-size: cover;
+    background-position: bottom right;
+}
+.aboutus-banner-section h2{
+    color: var(--main-color);
+}
+.aboutus-banner-section p{
+    margin: 20px 0;
+}
+.aboutus-banner-section button{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     color: var(--white-color);
+    background: var(--main-color);
+    border: 2px solid var(--white-color);
+    /* animation-name: ripple;
+    animation-duration: 2s;
+    animation-iteration-count: infinite; */
+    animation: ripple 2s infinite;
+    margin-top: 30px;
+}
+
+
+
+
+/* AboutUs Section ends here */
+
+/* Common fix starts here */
+header,
+main{
+    max-width: 1500px;
+    margin: 0 auto;
+}
