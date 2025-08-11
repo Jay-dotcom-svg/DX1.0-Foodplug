@@ -556,16 +556,21 @@ footer button:hover{
     color: var(--white-color);
 }
 footer a{
-     color: var(--main-color-dark);
+     color: var(--white-color);
+     color: var(--white-color);
      text-decoration: none;
+
 }
 footer button i{
     margin: 0;
     transition: all 0.5s ease;
+    /* border: 3px solid blue; */
+
 }
 footer button:hover i{
     margin-left: 10px;
 }
+
 
 
 /* Footer Section ends here */
